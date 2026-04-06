@@ -216,14 +216,18 @@ POST   /records
 Body:
 
 ```
-{ "amount": 1000, 
-"type": "income", 
-"category": "salary", 
-"note": "Monthly salary" }
+{ 
+    "amount": 1000, 
+    "type": "income", 
+    "category": "salary", 
+    "note": "Monthly salary" 
+}
 
 ```
 GET    /records
+```
 PUT    /records/:id
+```
 DELETE /records/:id
 ```
 
