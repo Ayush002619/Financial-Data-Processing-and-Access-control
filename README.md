@@ -325,9 +325,3 @@ GET  https://financial-data-processing-and-access.onrender.com/records
 * Advanced analytics (weekly trends)
 
 ---
-
-## 👨‍💻 Author
-
-Ayush Kumar
-
----
