@@ -323,5 +323,3 @@ GET  https://financial-data-processing-and-access.onrender.com/records
 * Frontend dashboard (React)
 * API documentation (Swagger)
 * Advanced analytics (weekly trends)
-
----
