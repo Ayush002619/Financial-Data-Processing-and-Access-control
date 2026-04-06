@@ -209,7 +209,7 @@ Authorization: Bearer YOUR_TOKEN
 ### 🔹 Step 4: Test APIs
 
 ### Records
-#### CREATE
+#### Creat
 
 ```
 POST   /records
@@ -273,9 +273,11 @@ GET /records/insights
 
 ```
 POST /budget
+
+```
+```
 GET  /budget
 ```
-
 ---
 
 #### Export CSV
