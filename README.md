@@ -208,7 +208,7 @@ Authorization: Bearer YOUR_TOKEN
 
 ### 🔹 Step 4: Test APIs
 
-#### Records
+### Records
 #### CREATE
 
 ```
@@ -224,17 +224,17 @@ Body:
     "note": "Monthly salary" 
 }
 ```
-### READ
+#### Read
 ```
-GET    /records
+GET /records
 ```
-### UPDATE
+#### Update
 ```
-PUT    /records/:id
+PUT /records/:id
 ```
-### DELETE
+#### Delete
 ```
-DELETE /records/:id
+DELETE  /records/:id
 ```
 
 ---
