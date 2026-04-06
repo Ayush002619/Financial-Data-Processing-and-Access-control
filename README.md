@@ -1,37 +1,56 @@
-# 💰 Finance Backend API
+# 💰 Finance Data Processing and Access Control Backend
 
-A complete backend system for managing financial records with authentication, analytics, budgeting, and smart insights.
+## 📌 Overview
 
----
+This project is a backend system designed for managing financial data with secure access control. It demonstrates backend development concepts including authentication, data processing, analytics, and API design.
 
-## 🚀 Live API
-
-👉 https://financial-data-processing-and-access.onrender.com
+The system allows users to track income and expenses, analyze financial patterns, set budgets, and generate insights.
 
 ---
 
-## 📌 Features
+## 🌐 Live API
 
-### 🔐 Authentication
+👉 **Base URL:**
+https://financial-data-processing-and-access.onrender.com
+
+---
+
+## 🚀 Features
+
+### 🔐 Authentication & Access Control
 
 * User Signup & Login
 * JWT-based authentication
-* Protected routes
+* Protected routes using middleware
+* Role-based access control
 
 ---
 
-### 💵 Financial Records
+### 💵 Financial Data Management
 
-* Create, Read, Update, Delete records
-* Filter by type, category, and date
-* Pagination support
-* Search functionality
+* Create, Read, Update, Delete (CRUD) records
+* User-specific data isolation
+* Filtering by:
+
+  * Type (income / expense)
+  * Category
+  * Date range
+
+---
+
+### 🔍 Advanced Query Features
+
+* Pagination (`page`, `limit`)
+* Search (category & note)
+* Sorting (latest records first)
 
 ---
 
 ### 📊 Dashboard Analytics
 
-* Total income, expense, net balance
+* Total income
+* Total expenses
+* Net balance
 * Category-wise breakdown
 * Monthly trends
 * Recent transactions
@@ -41,14 +60,14 @@ A complete backend system for managing financial records with authentication, an
 ### 🧠 Smart Insights
 
 * Savings rate analysis
-* Top spending category
+* Highest spending category detection
 * Expense vs income warnings
 
 ---
 
 ### 💰 Budget System
 
-* Set category-wise budgets
+* Set category-wise budget
 * Track spending vs limit
 * Budget status (Exceeded / Within limit)
 
@@ -56,15 +75,15 @@ A complete backend system for managing financial records with authentication, an
 
 ### 📤 Export Feature
 
-* Download records as CSV
+* Download records as CSV file
 
 ---
 
 ### 🔐 Security
 
-* Rate limiting
+* Rate limiting (prevents abuse)
 * JWT authentication
-* Environment variables
+* Environment variable configuration
 
 ---
 
@@ -74,7 +93,7 @@ A complete backend system for managing financial records with authentication, an
 * Express.js
 * MongoDB Atlas
 * Mongoose
-* JWT (jsonwebtoken)
+* JSON Web Token (JWT)
 * bcryptjs
 * json2csv
 
@@ -82,7 +101,7 @@ A complete backend system for managing financial records with authentication, an
 
 ## 📂 Project Structure
 
-```bash
+```
 controllers/
 models/
 routes/
@@ -94,11 +113,11 @@ server.js
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Setup Instructions (Local Development)
 
-### 1️⃣ Clone Repo
+### 1️⃣ Clone Repository
 
-```bash
+```
 git clone https://github.com/Ayush002619/Financial-Data-Processing-and-Access-control.git
 cd finance-backend
 ```
@@ -107,80 +126,159 @@ cd finance-backend
 
 ### 2️⃣ Install Dependencies
 
-```bash
+```
 npm install
 ```
 
 ---
 
-### 3️⃣ Create .env File
+### 3️⃣ Create `.env` File
 
-```bash
+Create a `.env` file in the root directory:
+
+```
+MONGO_URI=your_mongodb_uri_here
+JWT_SECRET=your_secret_key_here
 PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
 ```
 
 ---
 
 ### 4️⃣ Run Server
 
-```bash
+```
 npm run dev
 ```
 
 ---
 
-## 🔗 API Endpoints
+## 🧪 How to Test the API
 
-### 🔐 Auth
+You can test APIs using:
 
-* POST `/signup`
-* POST `/login`
-
----
-
-### 📊 Records
-
-* POST `/records`
-* GET `/records`
-* PUT `/records/:id`
-* DELETE `/records/:id`
+* Postman
+* Hoppscotch
 
 ---
 
-### 📈 Analytics
+### 🔹 Step 1: Signup
 
-* GET `/records/summary`
-* GET `/records/category`
-* GET `/records/recent`
-* GET `/records/monthly-trends`
+```
+POST /signup
+```
 
----
+Body:
 
-### 🧠 Insights
-
-* GET `/records/insights`
-
----
-
-### 💰 Budget
-
-* POST `/budget`
-* GET `/budget`
+```
+{
+  "name": "Test User",
+  "email": "test@gmsil.com",
+  "password": "987654",
+  "role": "admin"
+}
+```
 
 ---
 
-### 📤 Export
+### 🔹 Step 2: Login
 
-* GET `/records/export`
+```
+POST /login
+```
+
+Response:
+
+```
+{
+  "token": "your_jwt_token"
+}
+```
+
+---
+
+### 🔹 Step 3: Use Token
+
+Add in headers:
+
+```
+Authorization: Bearer YOUR_TOKEN
+```
+
+---
+
+### 🔹 Step 4: Test APIs
+
+#### Records
+
+```
+POST   /records
+GET    /records
+PUT    /records/:id
+DELETE /records/:id
+```
+
+---
+
+#### Filters & Search
+
+```
+GET /records?type=expense
+GET /records?category=food
+GET /records?search=food
+GET /records?page=1&limit=5
+```
+
+---
+
+#### Dashboard APIs
+
+```
+GET /records/summary
+GET /records/category
+GET /records/recent
+GET /records/monthly-trends
+```
+
+---
+
+#### Smart Insights
+
+```
+GET /records/insights
+```
+
+---
+
+#### Budget
+
+```
+POST /budget
+GET  /budget
+```
+
+---
+
+#### Export CSV
+
+```
+GET /records/export
+```
+
+---
+
+## 🎯 Example Live API Usage
+
+```
+POST https://your-app-name.onrender.com/signup
+GET  https://your-app-name.onrender.com/records
+```
 
 ---
 
 ## 🌐 Deployment
 
-Backend deployed on Render
-Database hosted on MongoDB Atlas
+* Backend deployed on Render
+* Database hosted on MongoDB Atlas
 
 ---
 
@@ -188,8 +286,8 @@ Database hosted on MongoDB Atlas
 
 * Modular backend architecture
 * MongoDB aggregation pipelines for analytics
-* Real-world financial features (budgeting, insights)
-* Secure API design
+* Real-world features like budgeting and insights
+* Secure and scalable API design
 
 ---
 
@@ -197,7 +295,7 @@ Database hosted on MongoDB Atlas
 
 * Frontend dashboard (React)
 * API documentation (Swagger)
-* Advanced analytics
+* Advanced analytics (weekly trends)
 
 ---
 
