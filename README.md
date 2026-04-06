@@ -274,6 +274,11 @@ GET /records/insights
 ```
 POST /budget
 
+{
+  "category": "food",
+  "limit": 5000
+}
+
 ```
 ```
 GET  /budget
