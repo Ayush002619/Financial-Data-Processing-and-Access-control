@@ -212,6 +212,16 @@ Authorization: Bearer YOUR_TOKEN
 
 ```
 POST   /records
+```
+Body:
+
+```
+{ "amount": 1000, 
+"type": "income", 
+"category": "salary", 
+"note": "Monthly salary" }
+
+```
 GET    /records
 PUT    /records/:id
 DELETE /records/:id
@@ -236,7 +246,7 @@ GET /records?page=1&limit=5
 GET /records/summary
 GET /records/category
 GET /records/recent
-GET /records/monthly-trends
+GET /records/trends
 ```
 
 ---
@@ -269,8 +279,8 @@ GET /records/export
 ## 🎯 Example Live API Usage
 
 ```
-POST https://your-app-name.onrender.com/signup
-GET  https://your-app-name.onrender.com/records
+POST https://financial-data-processing-and-access.onrender.com/signup
+GET  https://financial-data-processing-and-access.onrender.com/records
 ```
 
 ---
