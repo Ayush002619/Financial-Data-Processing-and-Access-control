@@ -222,14 +222,11 @@ Body:
     "category": "salary", 
     "note": "Monthly salary" 
 }
-
 ```
 GET    /records
-```
 PUT    /records/:id
-```
 DELETE /records/:id
-```
+
 
 ---
 
